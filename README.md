@@ -28,5 +28,5 @@ My first neural network to recognize hand-written digits in python with the help
 - Import mnist_loader to load the data
 - Load the data with *mnist_loader.load_wrapper()* which outputs trainning_data, validation_data and test_data
 - Import network2
-- Create your Neural Network with the command *net = network.Network(list_of_number_of_neurons_by_layer)* for instance you can run *net = network2.Network([784, 30, 10], cost=network2.CrossEntropy)*
-- Train your Network with *net.stochastic_gradient_descent(training_data,number_of_epochs, mini_batch_size, learning_rate, test_data)*. You can play with these hyper-parameters to get the most accurate model as possible. A good choice can be *net.stochastic_gradient_descent(training_data, 30, 10, 3.0, test_data)*.
+- Create your Neural Network with the command *net = network.Network(list_of_number_of_neurons_by_layer, cost_function)* for instance you can run *net = network2.Network([784, 30, 10], cost=network2.CrossEntropy)*
+- Train your Network with *net.stochastic_gradient_descent(training_data,number_of_epochs, mini_batch_size, learning_rate, lambda, test_data)* (lambda being the egularization parameter to give more importance to the small weights in the cost function). You can play with these hyper-parameters to get the most accurate model as possible. A good choice can be *net.stochastic_gradient_descent(training_data, 30, 10, 0.5, 5.0, test_data)*. Note that the Stochastig Gradient Descent outputs the cost and the accuracy to be able to plot them to tweak the hyper-parameters
