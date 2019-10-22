@@ -19,7 +19,7 @@ My first neural network to recognize hand-written digits in python with the help
 
 - I changed the cost function to the log-loss functionly
 - To avoid overfiting (noticeable by plotting the accuracy and the cost-function) we added early-stopping which consists in mesuring the accuracy on the validation_data to stop the fiting as soon as it caps
-- We added dropout
+- We added dropout (which consists in dropping some neurons from the network to 'forget' to improve the learning)
 - We improved the initialization of the weights to avoid weight saturation
 
 **How to generate a Neural Network with the second version (for linux)**
@@ -29,4 +29,4 @@ My first neural network to recognize hand-written digits in python with the help
 - Load the data with *mnist_loader.load_wrapper()* which outputs trainning_data, validation_data and test_data
 - Import network2
 - Create your Neural Network with the command *net = network.Network(list_of_number_of_neurons_by_layer, cost_function)* for instance you can run *net = network2.Network([784, 30, 10], cost=network2.CrossEntropy)*
-- Train your Network with *net.stochastic_gradient_descent(training_data,number_of_epochs, mini_batch_size, learning_rate, lambda, test_data)* (lambda being the egularization parameter to give more importance to the small weights in the cost function). You can play with these hyper-parameters to get the most accurate model as possible. A good choice can be *net.stochastic_gradient_descent(training_data, 30, 10, 0.5, 5.0, test_data)*. Note that the Stochastig Gradient Descent outputs the cost and the accuracy to be able to plot them to tweak the hyper-parameters
+- Train your Network with *net.stochastic_gradient_descent(training_data,number_of_epochs, mini_batch_size, learning_rate, lambda, test_data)* (lambda being the regularization parameter to give more importance to the small weights in the cost function). You can play with these hyper-parameters to get the most accurate model as possible. A good choice can be *net.stochastic_gradient_descent(training_data, 30, 10, 0.5, 5.0, test_data)*. Note that the Stochastic Gradient Descent outputs the cost and the accuracy to be able to plot them to tweak the hyper-parameters
