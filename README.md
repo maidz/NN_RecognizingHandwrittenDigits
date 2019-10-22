@@ -5,6 +5,7 @@ My first neural network to recognize hand-written digits in python with the help
 
 - The */data* repository contains the MNIST data for the neural network
 - The */src* repository contains the source code that you need to import to create a functionnal Neural Network (there are two different versions of the network as the book guides us through some improvements of our network
+- The */test_images* contains an Image to test our NN on other images than the MNIST DB
 
 **How to generate a Neural Network with the first version (for linux)**
 
@@ -30,3 +31,13 @@ My first neural network to recognize hand-written digits in python with the help
 - Import network2
 - Create your Neural Network with the command *net = network.Network(list_of_number_of_neurons_by_layer, cost_function)* for instance you can run *net = network2.Network([784, 30, 10], cost=network2.CrossEntropy)*
 - Train your Network with *net.SGD(training_data,number_of_epochs, mini_batch_size, learning_rate, lambda, test_data)* (lambda being the regularization parameter to give more importance to the small weights in the cost function). You can play with these hyper-parameters to get the most accurate model as possible. A good choice can be *net.stochastic_gradient_descent(training_data, 30, 10, 0.5, 5.0, test_data)*. Note that the Stochastic Gradient Descent outputs the cost and the accuracy to be able to plot them to tweak the hyper-parameters
+
+**How to test with your own image**
+
+- save your image in */test_images*
+- Create and train your NN as explained before
+- import everything from *reality.py*
+- call *image_resize(image_name)* to resize your image to be able to input it in the Network. Note that if it is a phone picture you might want to rotate it
+- call *own_test(image_name_resized)* to print the prediction of your number
+
+
