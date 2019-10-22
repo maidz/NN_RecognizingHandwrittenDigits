@@ -3,13 +3,13 @@ My first neural network to recognize hand-written digits in python with the help
 
 **Repository's structure**
 
-- The /data repository contains the MNIST data for the neural network
-- The /src repository contains the source code that you need to import to create a functionnal Neural Network (there are two different versions of the network as the book guides us through some improvements of our network
+- The */data* repository contains the MNIST data for the neural network
+- The */src* repository contains the source code that you need to import to create a functionnal Neural Network (there are two different versions of the network as the book guides us through some improvements of our network
 
 **How to generate a Neural Network with the first version (for linux)**
 
 - Open python3 in your shell
-- Import mnist_loader to load the data
+- Import *mnist_loader* to load the data
 - Load the data with *mnist_loader.load_wrapper()* which outputs trainning_data, validation_data and test_data
 - Import network
 - Create your Neural Network with the command *net = network.Network(list_of_number_of_neurons_by_layer)* for instance you can run *net = network.Network([784, 30, 10])*. Note that as the MNIST images are 28x28 you have to have 784 neurons in your input layer and as we want to predict a figure your output layer should have 10 neurons.
